@@ -38,17 +38,6 @@ Inspirado no AppliedE, mas **sem adicionar o AppliedE como dependência**.
 4. Conecte o módulo à rede do SCC como um storage normal.
 5. O SCC verá os itens transmutáveis com quantidade baseada no EMC disponível.
 
-## Funcionalidades
-
-- Bridge SCC ↔ ProjectE via `BulkItemStore`.
-- Extração/inserção de itens transmutáveis.
-- GUI de 1 slot (144x100) + painel de inventário separado (176x84).
-- Formatação de EMC (K/M/B/T) com tooltip de valor absoluto.
-- Multi-módulo: apenas o módulo primário expõe estoque (evita duplicação).
-- Team sharing via times do Minecraft (scoreboard).
-- Integração com Jade (EMC + owner por nome).
-- Logs dedicados em `logs/projcalc/`.
-
 ## Logs
 
 - `logs/projcalc/` — logs da sessão do mod.
