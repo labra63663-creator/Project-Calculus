@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=north": { "model": "projcalc:block/emc_transmutation_module" },
+    "facing=south": { "model": "projcalc:block/emc_transmutation_module", "y": 180 },
+    "facing=east": { "model": "projcalc:block/emc_transmutation_module", "y": 90 },
+    "facing=west": { "model": "projcalc:block/emc_transmutation_module", "y": 270 },
+    "facing=up": { "model": "projcalc:block/emc_transmutation_module", "x": 90 },
+    "facing=down": { "model": "projcalc:block/emc_transmutation_module", "x": 270 }
+  }
+}
