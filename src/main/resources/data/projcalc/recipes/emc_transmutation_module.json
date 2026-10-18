@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RTR",
+    "CKC",
+    " D "
+  ],
+  "key": {
+    "R": { "item": "projecte:red_matter_block" },
+    "T": { "item": "projecte:transmutation_table" },
+    "C": { "item": "scc:calculation_crafter" },
+    "K": { "item": "scc:calculator_controller" },
+    "D": { "item": "minecraft:diamond_block" }
+  },
+  "result": {
+    "id": "projcalc:emc_transmutation_module",
+    "count": 1
+  }
+}
