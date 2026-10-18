@@ -1,6 +1,6 @@
 # Changelog — Project Calculus
 
-## 0.0.1-dev
+## 1.0.0
 
 ### Adicionado
 - Módulo de transmutação EMC (`projcalc:emc_transmutation_module`).

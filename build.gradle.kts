@@ -6,7 +6,7 @@ val modId = "projcalc"
 val modName = "Project Calculus"
 
 base.archivesName = modId
-version = "0.0.1-dev"
+version = "1.0.0"
 group = "br.zuki.supercoole"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
