@@ -1,5 +1,9 @@
 {
   "block.projcalc.emc_transmutation_module": "Módulo de Transmutação EMC",
   "item.projcalc.emc_transmutation_module": "Módulo de Transmutação EMC",
-  "itemGroup.projcalc": "Project Calculus"
+  "itemGroup.projcalc": "Project Calculus",
+  "projcalc.configuration.title": "Project Calculus",
+  "projcalc.configuration.cacheTtlMs": "TTL do cache (ms)",
+  "projcalc.configuration.verboseLogs": "Logs detalhados",
+  "projcalc.configuration.teamSharing": "Compartilhamento de time"
 }
