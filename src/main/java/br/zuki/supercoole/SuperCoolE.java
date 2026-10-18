@@ -5,7 +5,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
@@ -34,6 +36,11 @@ public final class SuperCoolE {
 
     public SuperCoolE(IEventBus modEventBus, net.neoforged.fml.ModContainer modContainer) {
         modContainer.registerConfig(ModConfig.Type.COMMON, ProjCalcConfig.SPEC);
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            modContainer.registerExtensionPoint(
+                    net.neoforged.neoforge.client.gui.IConfigScreenFactory.class,
+                    (container, screen) -> new net.neoforged.neoforge.client.gui.ConfigurationScreen(container, screen));
+        }
         ProjCalcLog.info("Project Calculus initialized (modId=" + MOD_ID + ")");
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
