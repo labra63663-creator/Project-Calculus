@@ -17,10 +17,10 @@ repositories {
 
 dependencies {
     // APIs de tempo de compilação (runtime fornecido pelo jogo/instância)
-    compileOnly(files("/home/zuki/.local/share/FreesmLauncher/instances/SCE/minecraft/mods/scc-1.4.6.jar"))
-    compileOnly(files("/home/zuki/.local/share/FreesmLauncher/instances/SCE/minecraft/mods/ProjectE-1.21.1-PE1.1.0.jar"))
-    compileOnly(files("/home/zuki/.local/share/FreesmLauncher/instances/SCE/minecraft/mods/jei-1.21.1-neoforge-19.64.0.455.jar"))
-    compileOnly(files("/home/zuki/.local/share/FreesmLauncher/instances/SCE/minecraft/mods/Jade-1.21.1-NeoForge-15.10.6.jar"))
+    compileOnly(files("libs/scc-1.4.6.jar"))
+    compileOnly(files("libs/ProjectE-1.21.1-PE1.1.0.jar"))
+    compileOnly(files("libs/jei-1.21.1-neoforge-19.64.0.455.jar"))
+    compileOnly(files("libs/Jade-1.21.1-NeoForge-15.10.6.jar"))
 }
 
 neoForge {
