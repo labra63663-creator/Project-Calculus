@@ -19,18 +19,44 @@ public final class ProjCalcLog {
 
     private ProjCalcLog() {}
 
+    public static void debug(String message) {
+        if (!shouldLog("DEBUG")) return;
+        write("DEBUG", message);
+        SuperCoolE.LOGGER.debug(message);
+    }
+
     public static void info(String message) {
-        if (!ProjCalcConfig.verboseLogs()) return;
+        if (!shouldLog("INFO")) return;
         write("INFO", message);
         SuperCoolE.LOGGER.info(message);
     }
 
+    private static boolean shouldLog(String level) {
+        if (!ProjCalcConfig.verboseLogs() && ("DEBUG".equals(level) || "INFO".equals(level))) {
+            return false;
+        }
+        String configured = ProjCalcConfig.logLevel();
+        int configuredRank = rank(configured);
+        int messageRank = rank(level);
+        return messageRank >= configuredRank;
+    }
+
+    private static int rank(String level) {
+        if ("DEBUG".equalsIgnoreCase(level)) return 0;
+        if ("INFO".equalsIgnoreCase(level)) return 1;
+        if ("WARN".equalsIgnoreCase(level)) return 2;
+        if ("ERROR".equalsIgnoreCase(level)) return 3;
+        return 1;
+    }
+
     public static void warn(String message) {
+        if (!shouldLog("WARN")) return;
         write("WARN", message);
         SuperCoolE.LOGGER.warn(message);
     }
 
     public static void error(String message, Throwable t) {
+        if (!shouldLog("ERROR")) return;
         write("ERROR", message + (t == null ? "" : " :: " + t));
         SuperCoolE.LOGGER.error(message, t);
     }

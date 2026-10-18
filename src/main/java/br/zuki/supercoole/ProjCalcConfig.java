@@ -8,6 +8,7 @@ public final class ProjCalcConfig {
     public static final ModConfigSpec.IntValue CACHE_TTL_MS;
     public static final ModConfigSpec.BooleanValue VERBOSE_LOGS;
     public static final ModConfigSpec.BooleanValue TEAM_SHARING;
+    public static final ModConfigSpec.ConfigValue<String> LOG_LEVEL;
 
     static {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
@@ -20,6 +21,9 @@ public final class ProjCalcConfig {
         TEAM_SHARING = builder
                 .comment("Enable scoreboard team sharing for EMC/knowledge.")
                 .define("teamSharing", true);
+        LOG_LEVEL = builder
+                .comment("Log level: DEBUG, INFO, WARN, ERROR.")
+                .defineInList("logLevel", "INFO", java.util.List.of("DEBUG", "INFO", "WARN", "ERROR"));
         SPEC = builder.build();
     }
 
@@ -44,6 +48,14 @@ public final class ProjCalcConfig {
             return TEAM_SHARING.get();
         } catch (Throwable ignored) {
             return true;
+        }
+    }
+
+    public static String logLevel() {
+        try {
+            return LOG_LEVEL.get();
+        } catch (Throwable ignored) {
+            return "INFO";
         }
     }
 

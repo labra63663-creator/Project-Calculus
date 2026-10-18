@@ -5,5 +5,6 @@
   "projcalc.configuration.title": "Project Calculus",
   "projcalc.configuration.cacheTtlMs": "Cache TTL (ms)",
   "projcalc.configuration.verboseLogs": "Verbose Logs",
-  "projcalc.configuration.teamSharing": "Team Sharing"
+  "projcalc.configuration.teamSharing": "Team Sharing",
+  "projcalc.configuration.logLevel": "Log Level"
 }
