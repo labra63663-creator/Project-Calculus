@@ -20,7 +20,7 @@ public final class ProjCalcLog {
     private ProjCalcLog() {}
 
     public static void info(String message) {
-        if (!ProjCalcConfig.VERBOSE_LOGS.get()) return;
+        if (!ProjCalcConfig.verboseLogs()) return;
         write("INFO", message);
         SuperCoolE.LOGGER.info(message);
     }

@@ -106,7 +106,7 @@ public class EmcTransmutationModuleBlockEntity extends BlockEntity implements II
     private java.util.List<java.util.UUID> teamMembers() {
         java.util.List<java.util.UUID> out = new java.util.ArrayList<>();
         if (owner == null) return out;
-        if (!ProjCalcConfig.TEAM_SHARING.get()) {
+        if (!ProjCalcConfig.teamSharing()) {
             out.add(owner);
             return out;
         }
@@ -162,7 +162,7 @@ public class EmcTransmutationModuleBlockEntity extends BlockEntity implements II
 
     private List<ItemInfo> knownItems() {
         long now = System.currentTimeMillis();
-        if (cachedKnownItems != null && now - cachedKnownAt < ProjCalcConfig.CACHE_TTL_MS.get()) {
+        if (cachedKnownItems != null && now - cachedKnownAt < ProjCalcConfig.cacheTtlMs()) {
             return new ArrayList<>(cachedKnownItems);
         }
         java.util.Set<ItemInfo> set = new java.util.LinkedHashSet<>();
@@ -415,7 +415,7 @@ public class EmcTransmutationModuleBlockEntity extends BlockEntity implements II
             }
         }
         long now = System.currentTimeMillis();
-        if (cachedEntries != null && now - cachedEntriesAt < ProjCalcConfig.CACHE_TTL_MS.get()) {
+        if (cachedEntries != null && now - cachedEntriesAt < ProjCalcConfig.cacheTtlMs()) {
             return new ArrayList<>(cachedEntries);
         }
         List<ItemStack> list = computeEntries();

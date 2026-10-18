@@ -23,5 +23,29 @@ public final class ProjCalcConfig {
         SPEC = builder.build();
     }
 
+    public static int cacheTtlMs() {
+        try {
+            return CACHE_TTL_MS.get();
+        } catch (Throwable ignored) {
+            return 250;
+        }
+    }
+
+    public static boolean verboseLogs() {
+        try {
+            return VERBOSE_LOGS.get();
+        } catch (Throwable ignored) {
+            return true;
+        }
+    }
+
+    public static boolean teamSharing() {
+        try {
+            return TEAM_SHARING.get();
+        } catch (Throwable ignored) {
+            return true;
+        }
+    }
+
     private ProjCalcConfig() {}
 }
