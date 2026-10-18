@@ -6,6 +6,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -31,7 +32,8 @@ public final class SuperCoolE {
                     })
                     .build());
 
-    public SuperCoolE(IEventBus modEventBus) {
+    public SuperCoolE(IEventBus modEventBus, net.neoforged.fml.ModContainer modContainer) {
+        modContainer.registerConfig(ModConfig.Type.COMMON, ProjCalcConfig.SPEC);
         ProjCalcLog.info("Project Calculus initialized (modId=" + MOD_ID + ")");
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
