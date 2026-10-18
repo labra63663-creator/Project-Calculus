@@ -23,7 +23,7 @@ public final class ProjCalcConfig {
                 .define("teamSharing", true);
         LOG_LEVEL = builder
                 .comment("Log level: DEBUG, INFO, WARN, ERROR.")
-                .defineInList("logLevel", "INFO", java.util.List.of("DEBUG", "INFO", "WARN", "ERROR"));
+                .define("logLevel", "INFO", o -> o instanceof String && java.util.List.of("DEBUG", "INFO", "WARN", "ERROR").contains(o));
         SPEC = builder.build();
     }
 
@@ -53,10 +53,13 @@ public final class ProjCalcConfig {
 
     public static String logLevel() {
         try {
-            return LOG_LEVEL.get();
+            String v = LOG_LEVEL.get();
+            if (v != null && java.util.List.of("DEBUG", "INFO", "WARN", "ERROR").contains(v)) {
+                return v;
+            }
         } catch (Throwable ignored) {
-            return "INFO";
         }
+        return "INFO";
     }
 
     private ProjCalcConfig() {}
