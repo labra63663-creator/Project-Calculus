@@ -7,7 +7,7 @@ issueTrackerURL="https://example.invalid/projcalc"
 modId="${modId}"
 version="${version}"
 displayName="${modName}"
-logoFile="logo.png"
+logoFile="icon.png"
 authors="LabraHell"
 description='''
 Integracao entre o Super Cool Calculator (SCC) e o ProjectE (inspirada no AppliedE).
