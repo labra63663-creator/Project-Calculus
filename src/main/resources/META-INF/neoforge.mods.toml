@@ -1,7 +1,8 @@
 modLoader="javafml"
 loaderVersion="[4,)"
 license="LGPL-3.0-or-later"
-issueTrackerURL="https://example.invalid/projcalc"
+issueTrackerURL="https://github.com/labra63663-creator/Project-Calculus/issues"
+displayURL="https://github.com/labra63663-creator/Project-Calculus"
 
 [[mods]]
 modId="${modId}"
