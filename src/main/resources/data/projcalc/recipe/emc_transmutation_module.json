@@ -3,13 +3,14 @@
   "pattern": [
     "RTR",
     "CKC",
-    " D "
+    "EDE"
   ],
   "key": {
     "R": { "item": "projecte:red_matter_block" },
     "T": { "item": "projecte:transmutation_table" },
     "C": { "item": "scc:calculation_crafter" },
     "K": { "item": "scc:calculator_controller" },
+    "E": { "item": "scc:red_dwarf_ember" },
     "D": { "item": "minecraft:diamond_block" }
   },
   "result": {
